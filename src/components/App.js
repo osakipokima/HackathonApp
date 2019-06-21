@@ -3,18 +3,42 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Details } from '.';
+import {
+  Details,
+  Schedule,
+  LiveUpdates,
+  FAQS,
+} from '.';
 
 class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
+        <Text>Welcome to PolyHacks</Text>
         <Button
-          title="Go to Details"
+          title="Details"
           // eslint-disable-next-line react/destructuring-assignment
           onPress={() => this.props.navigation.navigate('detailsPage')}
         />
+
+        <Button
+          title="Schedule"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('schedule')}
+        />
+
+        <Button
+          title="Live Updates"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('liveUpdate')}
+        />
+
+        <Button
+          title="FAQS"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('faqs')}
+        />
+
       </View>
     );
   }
@@ -25,13 +49,13 @@ const AppNavigator = createStackNavigator(
   {
     screen: HomeScreen,
     detailsPage: Details,
-    // schedule: Schedule,
-    // Live Update of when Hackathon ends
-    // FAQ’s
-    // Workshops
-    // Sponsors
-    // About
-    // Map
+    schedule: Schedule,
+    liveUpdate: LiveUpdates,
+    faqs: FAQS,
+    // workshops: Workshops
+    // sponsors: Sponsors
+    // about: About
+    // map: Map
   },
 );
 
