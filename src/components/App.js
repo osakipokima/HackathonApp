@@ -1,20 +1,23 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
   Details,
   Schedule,
   LiveUpdates,
   FAQS,
+  Header,
 } from '.';
 
 class HomeScreen extends React.Component {
+  // eslint-disable-next-line react/sort-comp
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Welcome to PolyHacks</Text>
+        <Header headerText="PhoenixHacks" />
         <Button
           title="Details"
           // eslint-disable-next-line react/destructuring-assignment

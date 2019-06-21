@@ -5,7 +5,9 @@ class LiveUpdates extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Live Updates</Text>
+        <Text>
+          Live Updates
+        </Text>
       </View>
     );
   }
