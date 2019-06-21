@@ -1,6 +1,4 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable react/no-multi-comp */
-/* eslint-disable react/prefer-stateless-function */
+
 import React from 'react';
 import { Button, View } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
