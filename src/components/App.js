@@ -24,7 +24,9 @@ class HomeScreen extends React.Component {
 const AppNavigator = createStackNavigator(
   {
     screen: HomeScreen,
-    detailsPage: Details
+    detailsPage: Details,
+    // schedule: Schedule,
+
 
   },
 

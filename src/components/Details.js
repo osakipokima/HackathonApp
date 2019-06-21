@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import { View, Text } from 'react-native';
 
