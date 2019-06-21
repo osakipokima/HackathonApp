@@ -1,15 +1,43 @@
+
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import {
+  Details,
+  Schedule,
+  LiveUpdates,
+  FAQS,
+  Header,
+} from '.';
 
 class HomeScreen extends React.Component {
+  // eslint-disable-next-line react/sort-comp
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen</Text>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Header headerText="PhoenixHacks" />
         <Button
-          title="Go to Details"
+          title="Details"
+          // eslint-disable-next-line react/destructuring-assignment
           onPress={() => this.props.navigation.navigate('detailsPage')}
+        />
+
+        <Button
+          title="Schedule"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('schedule')}
+        />
+
+        <Button
+          title="Live Updates"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('liveUpdate')}
+        />
+
+        <Button
+          title="FAQS"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('faqs')}
         />
 
       </View>
@@ -17,62 +45,19 @@ class HomeScreen extends React.Component {
   }
 }
 
-class Details extends React.Component{
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Details Screen</Text>
-      </View>
-    );
-  }
-}
-
 
 const AppNavigator = createStackNavigator(
-   {
+  {
     screen: HomeScreen,
-    detailsPage: Details
-
+    detailsPage: Details,
+    schedule: Schedule,
+    liveUpdate: LiveUpdates,
+    faqs: FAQS,
+    // workshops: Workshops
+    // sponsors: Sponsors
+    // about: About
+    // map: Map
   },
-
 );
 
 export default createAppContainer(AppNavigator);
-
-
-// export default class App extends Component {
-  
-//   render() {
-//     const { container, welcome, instructions } = styles;
-//     return (
-//       <View style={container}>
-//         <Text style={welcome}>PhoenixHacks</Text>
-//         <Text style={instructions}>November 2nd - 3rd</Text>
-//         <Text style={instructions}>Come join us</Text>
-
-//         <Button title='Next'
-//         onPress={openHome}
-//         />
-//       </View>
-//     );
-//   };
-// }
-
-// const styles = {
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// };
