@@ -2,14 +2,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-class Details extends React.PureComponent {
+class Map extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
+        <Text>Florida Poly Map</Text>
       </View>
     );
   }
 }
 
-export { Details };
+export { Map };

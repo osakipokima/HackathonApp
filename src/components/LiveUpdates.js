@@ -2,14 +2,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-class Details extends React.PureComponent {
+class LiveUpdates extends React.PureComponent {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
+        <Text>
+          Live Updates
+        </Text>
       </View>
     );
   }
 }
 
-export { Details };
+export { LiveUpdates };

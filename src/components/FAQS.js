@@ -1,15 +1,14 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 import { View, Text } from 'react-native';
 
-class Details extends React.PureComponent {
+class FAQS extends React.PureComponent {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
+        <Text>FAQS</Text>
       </View>
     );
   }
 }
 
-export { Details };
+export { FAQS };
