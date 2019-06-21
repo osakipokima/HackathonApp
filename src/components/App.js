@@ -26,10 +26,13 @@ const AppNavigator = createStackNavigator(
     screen: HomeScreen,
     detailsPage: Details,
     // schedule: Schedule,
-
-
+    // Live Update of when Hackathon ends
+    // FAQ’s
+    // Workshops
+    // Sponsors
+    // About
+    // Map
   },
-
 );
 
 export default createAppContainer(AppNavigator);
