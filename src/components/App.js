@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable import/named */
+/* eslint-disable linebreak-style */
 
 import React from 'react';
 import { Button, View } from 'react-native';
@@ -8,6 +11,7 @@ import {
   LiveUpdates,
   FAQS,
   Header,
+  Map,
 } from '.';
 
 class HomeScreen extends React.Component {
@@ -39,6 +43,11 @@ class HomeScreen extends React.Component {
           // eslint-disable-next-line react/destructuring-assignment
           onPress={() => this.props.navigation.navigate('faqs')}
         />
+        <Button
+          title="Map"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('map')}
+        />
 
       </View>
     );
@@ -53,10 +62,10 @@ const AppNavigator = createStackNavigator(
     schedule: Schedule,
     liveUpdate: LiveUpdates,
     faqs: FAQS,
+    map: Map,
     // workshops: Workshops
     // sponsors: Sponsors
     // about: About
-    // map: Map
   },
 );
 
