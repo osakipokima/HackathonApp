@@ -1,5 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
 // eslint-disable-next-line react/destructuring-assignment
+/* eslint-disable linebreak-style */
+/* eslint-disable import/named */
+/* eslint-disable linebreak-style */
+
 import React from 'react';
 import {
   Button, View, TouchableOpacity,
@@ -10,7 +14,8 @@ import {
   Schedule,
   LiveUpdates,
   FAQS,
-  Header
+  Header,
+  Map,
 } from '.';
 
 class HomeScreen extends React.PureComponent {
@@ -40,6 +45,12 @@ class HomeScreen extends React.PureComponent {
           // eslint-disable-next-line react/destructuring-assignment
           onPress={() => this.props.navigation.navigate('faqs')}
         />
+        <Button
+          title="Map"
+          // eslint-disable-next-line react/destructuring-assignment
+          onPress={() => this.props.navigation.navigate('map')}
+        />
+
       </View>
     );
   }
@@ -53,10 +64,10 @@ const AppNavigator = createStackNavigator(
     schedule: Schedule,
     liveUpdate: LiveUpdates,
     faqs: FAQS,
+    map: Map,
     // workshops: Workshops
     // sponsors: Sponsors
     // about: About
-    // map: Map
   },
   {
     /* The header config from HomeScreen is now here */

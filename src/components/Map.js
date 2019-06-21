@@ -2,16 +2,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-class LiveUpdates extends React.PureComponent {
+class Map extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>
-          Live Updates
-        </Text>
+        <Text>Florida Poly Map</Text>
       </View>
     );
   }
 }
 
-export { LiveUpdates };
+export { Map };
