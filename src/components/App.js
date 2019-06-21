@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable react/destructuring-assignment */
 // eslint-disable-next-line react/destructuring-assignment
 /* eslint-disable linebreak-style */
