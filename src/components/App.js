@@ -1,9 +1,13 @@
+/* eslint-disable react/destructuring-assignment */
+// eslint-disable-next-line react/destructuring-assignment
 /* eslint-disable linebreak-style */
 /* eslint-disable import/named */
 /* eslint-disable linebreak-style */
 
 import React from 'react';
-import { Button, View } from 'react-native';
+import {
+  Button, View, TouchableOpacity,
+} from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
   Details,
@@ -14,17 +18,15 @@ import {
   Map,
 } from '.';
 
-class HomeScreen extends React.Component {
+class HomeScreen extends React.PureComponent {
   // eslint-disable-next-line react/sort-comp
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Header headerText="PhoenixHacks" />
-        <Button
-          title="Details"
-          // eslint-disable-next-line react/destructuring-assignment
-          onPress={() => this.props.navigation.navigate('detailsPage')}
-        />
+      <View style={{ flex: 1, justifyContent: 'center' }}>
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('detailsPage')}>
+          <Header headerText="Details" />
+        </TouchableOpacity>
 
         <Button
           title="Schedule"
@@ -67,6 +69,20 @@ const AppNavigator = createStackNavigator(
     // sponsors: Sponsors
     // about: About
   },
+  {
+    /* The header config from HomeScreen is now here */
+    defaultNavigationOptions: {
+      title: 'Phoenix Hacks',
+      headerStyle: {
+        backgroundColor: '#8F40BF',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  }
 );
+
 
 export default createAppContainer(AppNavigator);
