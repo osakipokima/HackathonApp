@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable linebreak-style */
 /* eslint-disable react/destructuring-assignment */
 // eslint-disable-next-line react/destructuring-assignment
@@ -7,7 +8,7 @@
 
 import React from 'react';
 import {
-  Button, View, TouchableOpacity, Image, Linking
+  Button, View, TouchableOpacity, Image, Linking, ImageBackground,
 } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
@@ -31,8 +32,17 @@ const styles = {
     shadowRadius: 2,
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 8,
+    marginTop: 20,
     marginBottom: 10,
+  },
+  actions: {
+    backgroundColor: '#000000',
+    justifyContent: 'center',
+    marginTop: 100,
+  },
+  container: {
+    resizeMode: 'stretch',
+    height: 900,
   }
 };
 
@@ -41,43 +51,42 @@ class HomeScreen extends React.PureComponent {
   open = () => { Linking.openURL('http://phoenixhacks.com'); };
 
   render() {
-    const { logoStyle } = styles;
+    const { logoStyle, container, actions } = styles;
     return (
-      <View>
+      <ImageBackground
+        style={container}
+        source={require('../img/purple.gif')}
+      >
         <TouchableOpacity onPress={this.open}>
           <Image source={Logo} style={logoStyle} />
         </TouchableOpacity>
 
-        <View style={{ justifyContent: 'center' }}>
+        <View style={actions}>
+
           <TouchableOpacity onPress={() => this.props.navigation.navigate('detailsPage')}>
             <Header headerText="Details" />
           </TouchableOpacity>
 
           <Button
             title="Schedule"
-          // eslint-disable-next-line react/destructuring-assignment
             onPress={() => this.props.navigation.navigate('schedule')}
           />
 
           <Button
             title="Live Updates"
-          // eslint-disable-next-line react/destructuring-assignment
             onPress={() => this.props.navigation.navigate('liveUpdate')}
           />
 
           <Button
             title="FAQS"
-          // eslint-disable-next-line react/destructuring-assignment
             onPress={() => this.props.navigation.navigate('faqs')}
           />
           <Button
             title="Map"
-          // eslint-disable-next-line react/destructuring-assignment
             onPress={() => this.props.navigation.navigate('map')}
           />
-
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
