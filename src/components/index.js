@@ -5,3 +5,6 @@ export * from './LiveUpdates';
 export * from './FAQS';
 export * from './Header';
 export * from './Map';
+export * from './About';
+export * from './Sponsors';
+export * from './Workshops';

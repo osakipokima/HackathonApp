@@ -17,6 +17,9 @@ import {
   LiveUpdates,
   FAQS,
   Map,
+  About,
+  Sponsors,
+  Workshops
 } from '.';
 // mport poly-hacks.png from '/Users/jonathan/Code/HackathonApp/src/img/poly-hacks.png';
 
@@ -90,6 +93,21 @@ class HomeScreen extends React.PureComponent {
             color="#8F40BF"
             onPress={() => this.props.navigation.navigate('map')}
           />
+          <Button
+            color="#8F40BF"
+            title="About"
+            onPress={() => this.props.navigation.navigate('about')}
+          />
+          <Button
+            color="#8F40BF"
+            title="Sponsors"
+            onPress={() => this.props.navigation.navigate('sponsors')}
+          />
+          <Button
+            color="#8F40BF"
+            title="Workshops"
+            onPress={() => this.props.navigation.navigate('workshops')}
+          />
         </View>
       </ImageBackground>
     );
@@ -105,9 +123,9 @@ const AppNavigator = createStackNavigator(
     liveUpdate: LiveUpdates,
     faqs: FAQS,
     map: Map,
-    // workshops: Workshops
-    // sponsors: Sponsors
-    // about: About
+    workshops: Workshops,
+    sponsors: Sponsors,
+    about: About
   },
   {
     /* The header config from HomeScreen is now here */
