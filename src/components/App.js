@@ -64,13 +64,16 @@ class HomeScreen extends React.PureComponent {
         </TouchableOpacity>
 
         <View style={actions}>
-
+          <Button
+            title="Map"
+            color="#8F40BF"
+            onPress={() => this.props.navigation.navigate('map')}
+          />
           <Button
             color="#8F40BF"
             title="Details"
             onPress={() => this.props.navigation.navigate('detailsPage')}
           />
-
           <Button
             color="#8F40BF"
             title="Schedule"
@@ -82,21 +85,10 @@ class HomeScreen extends React.PureComponent {
             title="Live Updates"
             onPress={() => this.props.navigation.navigate('liveUpdate')}
           />
-
-          <Button
-            title="FAQS"
-            color="#8F40BF"
-            onPress={() => this.props.navigation.navigate('faqs')}
-          />
-          <Button
-            title="Map"
-            color="#8F40BF"
-            onPress={() => this.props.navigation.navigate('map')}
-          />
           <Button
             color="#8F40BF"
-            title="About"
-            onPress={() => this.props.navigation.navigate('about')}
+            title="Workshops"
+            onPress={() => this.props.navigation.navigate('workshops')}
           />
           <Button
             color="#8F40BF"
@@ -105,9 +97,15 @@ class HomeScreen extends React.PureComponent {
           />
           <Button
             color="#8F40BF"
-            title="Workshops"
-            onPress={() => this.props.navigation.navigate('workshops')}
+            title="About"
+            onPress={() => this.props.navigation.navigate('about')}
           />
+          <Button
+            title="FAQS"
+            color="#8F40BF"
+            onPress={() => this.props.navigation.navigate('faqs')}
+          />
+
         </View>
       </ImageBackground>
     );
