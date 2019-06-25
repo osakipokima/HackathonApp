@@ -16,7 +16,6 @@ import {
   Schedule,
   LiveUpdates,
   FAQS,
-  Header,
   Map,
 } from '.';
 // mport poly-hacks.png from '/Users/jonathan/Code/HackathonApp/src/img/poly-hacks.png';
@@ -36,7 +35,7 @@ const styles = {
     marginBottom: 10,
   },
   actions: {
-    backgroundColor: '#000000',
+    // backgroundColor: '#000000',
     justifyContent: 'center',
     marginTop: 100,
   },
@@ -63,26 +62,32 @@ class HomeScreen extends React.PureComponent {
 
         <View style={actions}>
 
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('detailsPage')}>
-            <Header headerText="Details" />
-          </TouchableOpacity>
+          <Button
+            color="#8F40BF"
+            title="Details"
+            onPress={() => this.props.navigation.navigate('detailsPage')}
+          />
 
           <Button
+            color="#8F40BF"
             title="Schedule"
             onPress={() => this.props.navigation.navigate('schedule')}
           />
 
           <Button
+            color="#8F40BF"
             title="Live Updates"
             onPress={() => this.props.navigation.navigate('liveUpdate')}
           />
 
           <Button
             title="FAQS"
+            color="#8F40BF"
             onPress={() => this.props.navigation.navigate('faqs')}
           />
           <Button
             title="Map"
+            color="#8F40BF"
             onPress={() => this.props.navigation.navigate('map')}
           />
         </View>
