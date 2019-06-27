@@ -16,7 +16,7 @@ const styles = {
     shadowRadius: 2,
     marginLeft: 5,
     marginRight: 5,
-    // marginTop: 1,
+    marginTop: -1,
     tintColor: '#000000'
   }
 };

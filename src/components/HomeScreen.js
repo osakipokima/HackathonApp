@@ -107,8 +107,8 @@ export default createAppContainer(createStackNavigator(
     about: About
   }, {
     defaultNavigationOptions: {
-      initialRouteName: 'Homescreen',
-      title: 'Phoenix Hacks',
+      initialRouteName: 'screen',
+      // title: 'Phoenix Hacks',
       headerStyle: {
         backgroundColor: '#8F40BF',
       },

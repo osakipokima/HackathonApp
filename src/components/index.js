@@ -17,3 +17,5 @@ export * from './Spinner';
 export * from './Walkthrough';
 export * from './SplashScreen/index';
 export * from './Logo';
+export default './HomeScreen';
+// export * from './AuthRoute';
