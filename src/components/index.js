@@ -16,3 +16,4 @@ export * from './LoginForm';
 export * from './Spinner';
 export * from './Walkthrough';
 export * from './SplashScreen/index';
+export * from './Logo';

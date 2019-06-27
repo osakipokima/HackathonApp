@@ -2,12 +2,12 @@
 /* eslint-disable react/sort-comp */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 
 class SplashScreen extends React.PureComponent {
   performTimeConsumingTask = async () => new Promise(resolve => setTimeout(
     () => { resolve('result'); },
-    2000
+    5000
   ))
 
   async componentDidMount() {
@@ -21,15 +21,19 @@ class SplashScreen extends React.PureComponent {
   }
 
   render() {
-    const Logo = require('../../img/poly-hacks.png');
-    const { logoStyle, viewStyles, textStyles } = styles;
+    // const Logo = require('../../img/poly-hacks.png');
+    const { container, viewStyles, textStyles } = styles;
 
     return (
       <View style={viewStyles}>
-        <Image source={Logo} style={logoStyle} />
-        <Text style={textStyles}>
+        <ImageBackground
+          source={require('../../img/splash.gif')}
+          style={container}
+        >
+          <Text style={textStyles}>
       Phoenix Hacks
-        </Text>
+          </Text>
+        </ImageBackground>
       </View>
     );
   }
@@ -45,7 +49,10 @@ const styles = {
   textStyles: {
     color: 'white',
     fontSize: 40,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
   logoStyle: {
     alignSelf: 'center',
@@ -57,6 +64,13 @@ const styles = {
     marginRight: 5,
     marginTop: 20,
     marginBottom: 10,
+  },
+  container: {
+    resizeMode: 'stretch',
+    height: 400,
+    width: '100%',
+    backgroundColor: 'black',
+    opacity: 0.7,
   }
 };
 

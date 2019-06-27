@@ -4,7 +4,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import {
-  Button, View, TouchableOpacity, Image, Linking, ImageBackground,
+  Button, View, ImageBackground,
 } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
@@ -16,25 +16,11 @@ import {
   About,
   Sponsors,
   Workshops,
+  Logo
 } from '.';
 
-const Logo = require('../img/poly-hacks.png');
-
-
 const styles = {
-  logoStyle: {
-    alignSelf: 'center',
-    width: 100,
-    height: 100,
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 20,
-    marginBottom: 10,
-  },
   actions: {
-    // backgroundColor: '#000000',
     justifyContent: 'center',
     marginTop: 100,
   },
@@ -51,21 +37,14 @@ class HomeScreen extends React.PureComponent {
     this.state = { isLoading: true };
   }
 
-  open = () => {
-    Linking.openURL('http://phoenixhacks.com');
-  }
-
   render() {
-    const { logoStyle, container, actions } = styles;
+    const { container, actions } = styles;
 
     return (
       <ImageBackground
         style={container}
         source={require('../img/purple.gif')}
       >
-        <TouchableOpacity onPress={this.open}>
-          <Image source={Logo} style={logoStyle} />
-        </TouchableOpacity>
 
         <View style={actions}>
           <Button
@@ -83,7 +62,6 @@ class HomeScreen extends React.PureComponent {
             title="Schedule"
             onPress={() => this.props.navigation.navigate('schedule')}
           />
-
           <Button
             color="#8F40BF"
             title="Live Updates"
@@ -109,7 +87,6 @@ class HomeScreen extends React.PureComponent {
             color="#8F40BF"
             onPress={() => this.props.navigation.navigate('faqs')}
           />
-
         </View>
       </ImageBackground>
     );
@@ -136,6 +113,7 @@ export default createAppContainer(createStackNavigator(
         backgroundColor: '#8F40BF',
       },
       headerTintColor: '#fff',
+      headerTitle: <Logo />,
       headerTitleStyle: {
         fontWeight: 'bold',
         textAlign: 'center',
