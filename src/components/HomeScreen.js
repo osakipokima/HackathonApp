@@ -41,6 +41,7 @@ const styles = {
   container: {
     resizeMode: 'stretch',
     height: 900,
+    backgroundColor: 'black'
   }
 };
 
