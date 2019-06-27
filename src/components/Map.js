@@ -13,7 +13,7 @@ class Map extends React.Component {
         <Image
           source={mapImg}
           style={{
-            transform: [{ rotate: '90deg' }], resizeMode: 'stretch', width: '155%', height: '75%'
+            transform: [{ rotate: '90deg' }], width: 750, height: 400
           }}
         />
       </View>

@@ -22,13 +22,14 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     // top: '100%',
-    backgroundColor: '#8F40BF',
+    color: '#8F40BF',
+    backgroundColor: '#000000'
 
   },
   view: {
     // Color: '#8F40BF',
     justifyContent: 'center',
-    // alignItems: 'auto',
+    alignItems: 'center',
     paddingTop: 1,
     paddingBottom: 10,
     // shadowColor: '#2792eb',
