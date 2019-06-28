@@ -12,11 +12,12 @@
 // import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { SplashScreen } from './SplashScreen';
-import AuthRoute from './AuthRoute';
+import HomeScreen from './HomeScreen';
+
 
 const InitialNavigator = createSwitchNavigator({
   Splash: SplashScreen,
-  App: AuthRoute,
+  App: HomeScreen,
 });
 
 

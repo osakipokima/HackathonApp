@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-no-undef */
@@ -6,28 +7,39 @@ import {
   Button, View, Text
 } from 'react-native';
 import { createSwitchNavigator, createNavigationContainer } from 'react-navigation';
-import { Card, CardSection } from '.';
+import {
+  Card, CardSection, LoginScreen
+} from '.';
 import HomeScreen from './HomeScreen';
-import { SplashScreen } from './SplashScreen';
 
 const styles = {
   card: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 100,
+    alignSelf: 'center',
+    // marginTop: '50%',
+    // display: 'flex'
   },
+  view: {
+    backgroundColor: 'black',
+    height: '100%',
+  },
+  cardtest: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 };
 
 class AuthRoute extends React.PureComponent {
   render() {
-    const { card } = styles;
+    const { card, view, cardtest } = styles;
 
     return (
-      <View>
+      <View style={view}>
         <Card>
-          <View style={card}>
-            <CardSection>
 
+          <CardSection>
+            <View style={cardtest}>
               <Text> Did you Pre-Register? </Text>
               <Button
                 title="Yes"
@@ -37,8 +49,8 @@ class AuthRoute extends React.PureComponent {
                 title="No"
                 onPress={() => this.props.navigation.navigate('No')}
               />
-            </CardSection>
-          </View>
+            </View>
+          </CardSection>
         </Card>
       </View>
     );
@@ -48,7 +60,7 @@ class AuthRoute extends React.PureComponent {
 export default createNavigationContainer(createSwitchNavigator(
   {
     screen: AuthRoute,
-    Yes: SplashScreen,
+    Yes: LoginScreen,
     No: HomeScreen,
   },
   {

@@ -30,12 +30,12 @@ const styles = {
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: 'white',
-    backgroundColor: '#2792eb',
+    backgroundColor: 'purple',
     marginTop: '20%',
     bottom: '10%',
     borderRadius: 2,
     shadowRadius: 2,
-    shadowColor: '#2792eb',
+    shadowColor: 'purple',
     shadowOpacity: 0.1,
     // borderColor: '#2792eb'
   }

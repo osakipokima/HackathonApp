@@ -13,12 +13,12 @@ const Card = props => (
 const styles = {
   containerStyle: {
     borderColor: 'transparent',
-    shadowColor: '#2792eb',
+    shadowColor: 'purple',
     borderRadius: 5,
     borderWidth: 2,
     padding: 5,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.8,
     shadowRadius: 2,
     elevtaion: 2,
     marginLeft: 5,

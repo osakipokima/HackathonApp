@@ -2,12 +2,12 @@
 /* eslint-disable react/sort-comp */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { View, Text, ImageBackground } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 
 class SplashScreen extends React.PureComponent {
   performTimeConsumingTask = async () => new Promise(resolve => setTimeout(
     () => { resolve('result'); },
-    5000
+    7000
   ))
 
   async componentDidMount() {
@@ -22,17 +22,20 @@ class SplashScreen extends React.PureComponent {
 
   render() {
     // const Logo = require('../../img/poly-hacks.png');
-    const { container, viewStyles, textStyles } = styles;
+    const { container, viewStyles } = styles;
 
     return (
-      <View style={viewStyles}>
+      <View
+        style={viewStyles}
+        source={require('../../img/firegif.gif')}
+      >
         <ImageBackground
-          source={require('../../img/splash.gif')}
+          source={require('../../img/firegif.gif')}
           style={container}
         >
-          <Text style={textStyles}>
+          {/* <Text style={textStyles}>
       Phoenix Hacks
-          </Text>
+          </Text> */}
         </ImageBackground>
       </View>
     );
@@ -44,11 +47,18 @@ const styles = {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'black'
+    backgroundColor: '#060109',
+    tintColor: 'black',
+    opacity: 0.8
   },
   textStyles: {
     color: 'white',
-    fontSize: 40,
+    shadowColor: 'black',
+    shadowOpacity: 1,
+    opacity: 1,
+    shadowRadius: 10,
+    fontSize: 50,
+    marginTop: '70%',
     fontWeight: 'bold',
     alignSelf: 'center',
     alignItems: 'center',
@@ -66,11 +76,17 @@ const styles = {
     marginBottom: 10,
   },
   container: {
-    resizeMode: 'stretch',
-    height: 400,
+    // resizeMode: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
+    tintColor: 'black',
+    // marginLeft: 10,
+    // flex: 1,
+    display: 'flex',
+    height: 550,
     width: '100%',
     backgroundColor: 'black',
-    opacity: 0.7,
+    opacity: 0.3,
   }
 };
 

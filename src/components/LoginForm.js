@@ -5,8 +5,9 @@
 import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 import firebase from 'firebase';
+
 import {
-  Spinner, CardSection, Card, Button
+  Spinner, Button, Textbox
 } from '.';
 
 class LoginForm extends React.PureComponent {
@@ -63,42 +64,43 @@ class LoginForm extends React.PureComponent {
       label, errorTextStyle, inputText, viewPosition, text
     } = styles;
     return (
-      <Card>
-        <View style={viewPosition}>
-          <CardSection>
-            <View style={label}>
-              <Text style={text}> Email : </Text>
-            </View>
+      <View style={viewPosition}>
+        <Textbox>
+          <View style={label}>
+            <Text style={text}> Email : </Text>
+          </View>
 
-            <TextInput
-              style={inputText}
-              autoCorrect={false}
-              onChangeText={Email => this.setState({ Email })}
-              placeholder="User@email.com"
-              value={this.state.Email}
-            />
-          </CardSection>
+          <TextInput
+            style={inputText}
+            autoCorrect={false}
+            onChangeText={Email => this.setState({ Email })}
+            placeholder="User@email.com"
+            value={this.state.Email}
+          />
+        </Textbox>
 
-          <Text style={errorTextStyle}>{this.state.error}</Text>
+        <Textbox style={{ paddingVertical: 10 }}>
+          <View style={label}>
+            <Text style={text}> Password : </Text>
+          </View>
 
-          <CardSection>
-            <View style={label}>
-              <Text style={text}> Password : </Text>
-            </View>
-
-            <TextInput
-              style={inputText}
-              autoCorrect={false}
-              secureTextEntry
-              onChangeText={Password => this.setState({ Password })}
-              placeholder="Enter Password"
-              value={this.state.Password}
-            />
-          </CardSection>
-        </View>
+          <TextInput
+            style={inputText}
+            autoCorrect={false}
+            secureTextEntry
+            onChangeText={Password => this.setState({ Password })}
+            placeholder="Enter Password"
+            value={this.state.Password}
+          />
+        </Textbox>
 
         {this.renderButton()}
-      </Card>
+        {/* <Button>
+              Back
+        </Button> */}
+        <Text style={errorTextStyle}>{this.state.error}</Text>
+      </View>
+
     );
   }
 }
@@ -123,7 +125,7 @@ const styles = {
     fontSize: 15,
     alignSelf: 'center',
     color: 'red',
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     fontWeight: 'bold'
   },
   orText: {
@@ -142,11 +144,12 @@ const styles = {
     paddingBottom: 15
   },
   inputText: {
-    paddingVertical: 10,
+    paddingVertical: 5,
     paddingHorizontal: 10,
     height: 40,
     display: 'flex',
-    marginLeft: -5,
+    justifyContent: 'center'
+    // marginLeft: -5,
   },
   viewPosition: {
     alignItems: 'center'

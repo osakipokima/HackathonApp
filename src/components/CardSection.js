@@ -17,14 +17,15 @@ const styles = {
     backgroundColor: 'white',
     minWidth: Dimensions.get('screen').width * 0.65,
     alignContent: 'center',
-    display: 'flex',
-    borderColor: '#2792eb',
-    flexDirection: 'row',
-    shadowColor: '#2792eb',
+    // display: 'flex',
+    borderColor: 'purple',
+    // flexDirection: 'row',
+    shadowColor: 'purple',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 2,
     elevtaion: 2,
+    marginTop: '70%'
   }
 };
 
