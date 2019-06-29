@@ -1,3 +1,6 @@
+/* eslint-disable prefer-template */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable import/no-unresolved */
 /* eslint-disable global-require */
 /* eslint-disable react/sort-comp */
 /* eslint-disable react/destructuring-assignment */
@@ -11,8 +14,6 @@ class SplashScreen extends React.PureComponent {
   ))
 
   async componentDidMount() {
-    // Preload data from an external API
-    // Preload data using AsyncStorage
     const data = await this.performTimeConsumingTask();
 
     if (data !== null) {
@@ -20,17 +21,18 @@ class SplashScreen extends React.PureComponent {
     }
   }
 
+
   render() {
-    // const Logo = require('../../img/poly-hacks.png');
+    const rand = Math.floor((Math.random() * 2) + 1);
+    const gif = require('../../img/${rand}.gif');
     const { container, viewStyles } = styles;
 
     return (
       <View
         style={viewStyles}
-        source={require('../../img/firegif.gif')}
       >
         <ImageBackground
-          source={require('../../img/firegif.gif')}
+          source={gif}
           style={container}
         >
           {/* <Text style={textStyles}>
