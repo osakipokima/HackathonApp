@@ -1,11 +1,8 @@
-/* eslint-disable prefer-template */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable global-require */
-/* eslint-disable react/sort-comp */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/sort-comp */
 import React from 'react';
-import { View, ImageBackground } from 'react-native';
+import { View, ImageBackground, require } from 'react-native';
 
 class SplashScreen extends React.PureComponent {
   performTimeConsumingTask = async () => new Promise(resolve => setTimeout(
@@ -23,8 +20,9 @@ class SplashScreen extends React.PureComponent {
 
 
   render() {
-    const rand = Math.floor((Math.random() * 2) + 1);
-    const gif = require('../../img/${rand}.gif');
+    const { rand } = Math.floor((Math.random() * 3) + 1);
+    const string = `../../img/${rand}.gif`;
+    const gif = require('../../img/2.gif');
     const { container, viewStyles } = styles;
 
     return (
