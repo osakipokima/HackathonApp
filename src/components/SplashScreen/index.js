@@ -1,13 +1,12 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable global-require */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/sort-comp */
 import React from 'react';
-import { View, ImageBackground, require } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 
 class SplashScreen extends React.PureComponent {
   performTimeConsumingTask = async () => new Promise(resolve => setTimeout(
-    () => { resolve('result'); },
-    7000
+    () => { resolve('result'); }, 7000
   ))
 
   async componentDidMount() {
@@ -18,25 +17,21 @@ class SplashScreen extends React.PureComponent {
     }
   }
 
-
   render() {
-    const { rand } = Math.floor((Math.random() * 3) + 1);
-    const string = `../../img/${rand}.gif`;
-    const gif = require('../../img/2.gif');
-    const { container, viewStyles } = styles;
-
+    const { viewStyles, container } = styles;
+    const imgString = () => {
+      const rand = Math.floor(Math.random() * 2) + 1;
+      if (rand === 2) {
+        return require('../../img/2.gif');
+      }
+      return require('../../img/1.gif');
+    };
     return (
-      <View
-        style={viewStyles}
-      >
+      <View style={viewStyles}>
         <ImageBackground
-          source={gif}
+          source={imgString()}
           style={container}
-        >
-          {/* <Text style={textStyles}>
-      Phoenix Hacks
-          </Text> */}
-        </ImageBackground>
+        />
       </View>
     );
   }
@@ -76,17 +71,15 @@ const styles = {
     marginBottom: 10,
   },
   container: {
-    // resizeMode: 'stretch',
+    resizeMode: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
     tintColor: 'black',
-    // marginLeft: 10,
-    // flex: 1,
     display: 'flex',
     height: 550,
     width: '100%',
     backgroundColor: 'black',
-    opacity: 0.3,
+    opacity: 0.4,
   }
 };
 
